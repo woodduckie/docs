@@ -10,13 +10,25 @@ Excess insulin resistance detected: ISF adjusted from 100 to 73.52941176470588
 ******************
 Here's what each symbol above means:
 
- ">" : deviation from BGI was high enough that we assume carbs were being absorbed, and disregard it for autosens purposes
+ "x"  : deviation from BGI was high enough that we assume carbs were being absorbed, and disregard it for autosens purposes.  It could also have been exluded becuase of an unexplained high deviation (site failure, etc) at XXXXXX threshold.
 
- "+" : deviation was above what was expected
+ "+"  : deviation was above what was expected
 
- "-" : deviation was below what was expected
+ "-"  : deviation was below what was expected
 
- "=" : BGI is doing what we expect
+ "="  : BGI is doing what we expect
+ 
+ "4h" : time stamp to mark hour of day - i.e. 4h = 4am, 22h = 10pm, etc.
+ 
+ "8g" : COB. initial car entry will show as full carbohydrate count followed by "(" with subsequent COB notes (4g) as current calculated COB
+ 
+ "1u" : 
+ 
+ 
+ Any time new carbs are entered, the new COB is noted in that log. (It's not reporting carb entries, just COB at each point in time). The UAM check is based on total IOB compared normal basal. From the code, looks like if IOB is > 2 hours worth of basal, it will trigger a UAM detection, which will then persist until deviations turn negative again (with IOB < 2h basal).
+ 
+ 
+ 
 
 The symbols are in reverse order beginning with the most recent deviation on the left and ending with the deviations 24 hours ago on the right.
 
